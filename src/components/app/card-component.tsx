@@ -1,5 +1,3 @@
-
-
 function CardComponent(): JSX.Element{
   return(
     <article className="cities__card place-card">

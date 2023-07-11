@@ -4,6 +4,7 @@ import HomePage from '../../pages/home-page';
 import FavoritePage from '../../pages/favorite-page';
 import LoginPage from '../../pages/login-page';
 import OfferPage from '../../pages/offer-page';
+import ErrorPage from './error-page';
 
 type AppScreenProps = {
     countPlaces: number;
@@ -21,6 +22,7 @@ function App({countPlaces}: AppScreenProps): JSX.Element {
         </Route>
         <Route path={AppRoute.Offer} element={<OfferPage />}>
         </Route>
+        <Route path='*' element={<ErrorPage />}></Route>
       </Routes>
     </BrowserRouter>
   );

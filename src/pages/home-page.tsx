@@ -1,5 +1,5 @@
 import CardComponent from '../components/app/card-component';
-
+import {Link} from 'react-router-dom';
 type HomePageProps = {
   countPlaces:number;
 }
