@@ -1,11 +1,10 @@
-import HomePage from '../../pages/home-page';
-
+import HomePage from '../../pages/home-page/home-page';
 
 type AppScreenProps = {
-    countPlaces: number;
+  countPlaces: number;
 }
 
-function App({countPlaces}: AppScreenProps): JSX.Element {
+function App({ countPlaces }: AppScreenProps): JSX.Element {
   return (
     <div>
       <HomePage countPlaces={countPlaces} />
