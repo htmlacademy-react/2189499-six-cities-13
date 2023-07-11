@@ -1,11 +1,11 @@
-import CardComponent from '../components/app/card-component';
+import CardComponent from '../../components/app/card-component.tsx';
 
 type HomePageProps = {
-  countPlaces:number;
+  countPlaces: number;
 }
 
-function HomePage({countPlaces}: HomePageProps): JSX.Element {
-  return(
+function HomePage({ countPlaces }: HomePageProps): JSX.Element {
+  return (
     <div className="page page--gray page--main">
       <header className="header">
         <div className="container">
