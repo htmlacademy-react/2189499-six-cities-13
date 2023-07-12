@@ -3,10 +3,10 @@ const CountPlaces = {
 } as const;
 
 export enum AppRoute {
-  Main='/',
-  Login='/login',
-  Favorites='/favorites',
-  Offer='/offer',
+  Main = '/',
+  Login = '/login',
+  Favorites = '/favorites',
+  Offer = '/offer/:id',
 }
 
 export default CountPlaces;

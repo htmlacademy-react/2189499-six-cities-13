@@ -1,11 +1,12 @@
 import CardComponent from '../components/app/card-component';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../const';
 type HomePageProps = {
-  countPlaces:number;
+  countPlaces: number;
 }
 
-function HomePage({countPlaces}: HomePageProps): JSX.Element {
-  return(
+function HomePage({ countPlaces }: HomePageProps): JSX.Element {
+  return (
     <div className="page page--gray page--main">
       <header className="header">
         <div className="container">
@@ -50,11 +51,13 @@ function HomePage({countPlaces}: HomePageProps): JSX.Element {
         <div className="tabs">
           <section className="locations container">
             <ul className="locations__list tabs__list">
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="#">
-                  <span>Paris</span>
-                </a>
-              </li>
+              <Link to={AppRoute.Offer}>
+                <li className="locations__item">
+                  <a className="locations__item-link tabs__item" href="#">
+                    <span>Paris</span>
+                  </a>
+                </li>
+              </Link>
               <li className="locations__item">
                 <a className="locations__item-link tabs__item" href="#">
                   <span>Cologne</span>

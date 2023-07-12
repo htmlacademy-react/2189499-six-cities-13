@@ -1,16 +1,17 @@
-import { Route, BrowserRouter, Routes} from 'react-router-dom';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import { AppRoute } from '../../const';
 import HomePage from '../../pages/home-page';
 import FavoritePage from '../../pages/favorite-page';
 import LoginPage from '../../pages/login-page';
 import OfferPage from '../../pages/offer-page';
 import ErrorPage from './error-page';
+import '../../app.css';
 
 type AppScreenProps = {
-    countPlaces: number;
+  countPlaces: number;
 }
 
-function App({countPlaces}: AppScreenProps): JSX.Element {
+function App({ countPlaces }: AppScreenProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
