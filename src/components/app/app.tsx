@@ -1,11 +1,12 @@
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
-import { AppRoute } from '../../const';
+import { AppRoute, AuthorizationStatus } from '../../const';
 import HomePage from '../../pages/home-page';
 import FavoritePage from '../../pages/favorite-page';
 import LoginPage from '../../pages/login-page';
 import OfferPage from '../../pages/offer-page';
 import ErrorPage from './error-page';
 import '../../app.css';
+import PrivateRoute from './private-route.tsx';
 
 type AppScreenProps = {
   countPlaces: number;
@@ -19,7 +20,18 @@ function App({ countPlaces }: AppScreenProps): JSX.Element {
         </Route>
         <Route path={AppRoute.Login} element={<LoginPage />}>
         </Route>
-        <Route path={AppRoute.Favorites} element={<FavoritePage />}>
+
+        <Route
+          path={AppRoute.Favorites}
+          element={
+            <PrivateRoute
+              authorizationStatus={AuthorizationStatus.Auth}
+            >
+              <FavoritePage />
+            </PrivateRoute>
+          }
+        >
+
         </Route>
         <Route path={AppRoute.Offer} element={<OfferPage />}>
         </Route>
