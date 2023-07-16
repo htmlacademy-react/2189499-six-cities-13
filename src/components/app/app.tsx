@@ -8,6 +8,7 @@ import ErrorPage from './error-page';
 import '../../app.css';
 import PrivateRoute from './private-route.tsx';
 
+
 type AppScreenProps = {
   countPlaces: number;
 }
