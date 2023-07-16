@@ -1,0 +1,21 @@
+.error-page {
+    margin: 0, auto;
+    text-align: center;
+}
+
+.error-page-title {
+    font-size: 150px;
+}
+
+.error-page-text {
+    font-size: 60px;
+}
+
+.error-page-link {
+    color: #284e76;
+}
+
+.error-page-link:hover {
+    color: #4481c3;
+    transition: 0.05s;
+}

@@ -1,5 +1,7 @@
-import CardComponent from '../../components/app/card-component.tsx';
-
+import CardComponent from '../../components/card-component.tsx';
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../../const.tsx';
+import LogoComponent from '../../components/logo.tsx';
 type HomePageProps = {
   countPlaces: number;
 }
@@ -11,15 +13,7 @@ function HomePage({ countPlaces }: HomePageProps): JSX.Element {
         <div className="container">
           <div className="header__wrapper">
             <div className="header__left">
-              <a className="header__logo-link header__logo-link--active">
-                <img
-                  className="header__logo"
-                  src="img/logo.svg"
-                  alt="6 cities logo"
-                  width={81}
-                  height={41}
-                />
-              </a>
+              <LogoComponent />
             </div>
             <nav className="header__nav">
               <ul className="header__nav-list">
@@ -50,11 +44,13 @@ function HomePage({ countPlaces }: HomePageProps): JSX.Element {
         <div className="tabs">
           <section className="locations container">
             <ul className="locations__list tabs__list">
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="#">
-                  <span>Paris</span>
-                </a>
-              </li>
+              <Link to={AppRoute.Offer}>
+                <li className="locations__item">
+                  <a className="locations__item-link tabs__item" href="#">
+                    <span>Paris</span>
+                  </a>
+                </li>
+              </Link>
               <li className="locations__item">
                 <a className="locations__item-link tabs__item" href="#">
                   <span>Cologne</span>
