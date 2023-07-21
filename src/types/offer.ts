@@ -1,4 +1,4 @@
-export type Offer = {
+export type Offers = {
   image: string;
   header: string;
   description: string;

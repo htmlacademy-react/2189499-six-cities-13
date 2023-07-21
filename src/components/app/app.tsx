@@ -7,12 +7,16 @@ import OfferPage from '../../pages/offer-page/offer-page.tsx';
 import ErrorPage from '../../pages/error-page/error-page.tsx';
 import '../../app.css';
 import PrivateRoute from '../../components/private-route.tsx';
+import { Offers } from '../../types/offer.ts';
 
 type AppScreenProps = {
   countPlaces: number;
+  offers: Offers;
 }
 
-function App({ countPlaces }: AppScreenProps): JSX.Element {
+function App({ countPlaces, offers }: AppScreenProps): JSX.Element {
+  const [offersArray] = offers;
+  
   return (
     <BrowserRouter>
       <Routes>
@@ -32,7 +36,9 @@ function App({ countPlaces }: AppScreenProps): JSX.Element {
         >
 
         </Route>
-        <Route path={AppRoute.Offer} element={<OfferPage />}>
+        <Route 
+        path={AppRoute.Offer} 
+        element={<OfferPage offers = {offersArray as Offers}/>}>
         </Route>
         <Route path='*' element={<ErrorPage />}></Route>
       </Routes>
