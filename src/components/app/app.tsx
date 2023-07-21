@@ -7,16 +7,14 @@ import OfferPage from '../../pages/offer-page/offer-page.tsx';
 import ErrorPage from '../../pages/error-page/error-page.tsx';
 import '../../app.css';
 import PrivateRoute from '../../components/private-route.tsx';
-import { Offers } from '../../types/offer.ts';
+import { Offer } from '../../types/offer.ts';
 
 type AppScreenProps = {
   countPlaces: number;
-  offers: Offers;
+  offers: Offer[];
 }
 
 function App({ countPlaces, offers }: AppScreenProps): JSX.Element {
-  const [offersArray] = offers;
-  
   return (
     <BrowserRouter>
       <Routes>
@@ -28,7 +26,7 @@ function App({ countPlaces, offers }: AppScreenProps): JSX.Element {
           path={AppRoute.Favorites}
           element={
             <PrivateRoute
-              authorizationStatus={AuthorizationStatus.NoAuth}
+              authorizationStatus={AuthorizationStatus.Auth}
             >
               <FavoritePage />
             </PrivateRoute>
@@ -38,7 +36,7 @@ function App({ countPlaces, offers }: AppScreenProps): JSX.Element {
         </Route>
         <Route 
         path={AppRoute.Offer} 
-        element={<OfferPage offers = {offersArray as Offers}/>}>
+        element={<OfferPage offers={offers}/>}>
         </Route>
         <Route path='*' element={<ErrorPage />}></Route>
       </Routes>
