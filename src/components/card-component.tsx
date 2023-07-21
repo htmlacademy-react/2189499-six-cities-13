@@ -1,4 +1,10 @@
-function CardComponent(): JSX.Element {
+import { Offer } from "../types/offer";
+
+type CardComponentProps = {
+  offer: Offer;
+}
+
+function CardComponent({offer}: CardComponentProps): JSX.Element {
   return (
     <article className="cities__card place-card">
       <div className="cities__image-wrapper place-card__image-wrapper">

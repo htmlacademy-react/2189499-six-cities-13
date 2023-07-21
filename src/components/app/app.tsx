@@ -18,7 +18,7 @@ function App({ countPlaces, offers }: AppScreenProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={AppRoute.Main} element={<HomePage countPlaces={countPlaces} />} />
+        <Route path={AppRoute.Main} element={<HomePage countPlaces={countPlaces} offers={offers}/>} />
         <Route path={AppRoute.Login} element={<LoginPage />}>
         </Route>
 
@@ -36,7 +36,7 @@ function App({ countPlaces, offers }: AppScreenProps): JSX.Element {
         </Route>
         <Route 
         path={AppRoute.Offer} 
-        element={<OfferPage offers={offers}/>}>
+        element={<OfferPage />}>
         </Route>
         <Route path='*' element={<ErrorPage />}></Route>
       </Routes>

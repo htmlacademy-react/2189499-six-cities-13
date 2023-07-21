@@ -1,12 +1,8 @@
 import LogoComponent from '../../components/logo.tsx';
-import { Offer } from '../../types/offer.ts';
 import LoginComponent from '../../components/login-component.tsx';
 
-type offresArrayProps = {
-  offers: Offer[];
-};
-
-function OfferPage(props: offresArrayProps): JSX.Element {
+function OfferPage(): JSX.Element {
+  
   return (
     <div className="page">
       <header className="header">

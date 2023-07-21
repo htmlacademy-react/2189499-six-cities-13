@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 import { AppRoute } from '../../const.tsx';
 import LogoComponent from '../../components/logo.tsx';
 import LoginComponent from '../../components/login-component.tsx';
+import { Offer } from '../../types/offer.ts';
+
 type HomePageProps = {
   countPlaces: number;
+  offers: Offer[];
 }
 
-function HomePage({ countPlaces }: HomePageProps): JSX.Element {
+function HomePage({ countPlaces, offers }: HomePageProps): JSX.Element {
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -92,11 +95,7 @@ function HomePage({ countPlaces }: HomePageProps): JSX.Element {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <CardComponent />
-                <CardComponent />
-                <CardComponent />
-                <CardComponent />
-                <CardComponent />
+                {offers.map(offer => (<CardComponent offer={offer}/>))}
               </div>
             </section>
             <div className="cities__right-section">
