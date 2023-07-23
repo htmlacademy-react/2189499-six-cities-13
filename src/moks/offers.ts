@@ -2,30 +2,79 @@ import {Offer} from '../types/offer';
 
 export const offers: Offer[] = [
   {
-    id: 1,
-    image: "hhtp",
-    header: "Room 1",
-    description: "Задача организации, в особенности же постоянный количественный рост и сфера нашей активности способствует подготовки и реализации соответствующий условий активизации. С другой стороны постоянный количественный рост и сфера нашей активности требуют определения и уточнения новых предложений.",
-    premium: true,
-    type: "room",
-    rating: 4.8,
-    roomCount: 5,
-    guestMax: 2,
-    price: 400,
-    homeOwner: "Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет оценить значение модели развития.",
-  },
+    id: "6af6f711-c28d-4121-82cd-e0b462a27f00",
+    title: "Beautiful & luxurious studio at great location",
+    type: "apartment",
+    price: 120,
+    city: {
+      name: "Amsterdam",
+      location: {
+        latitude: 52.35514938496378,
+        longitude: 4.673877537499948,
+        zoom: 8
+      },
+    },
+    location: {
+      latitude: 52.35514938496378,
+      longitude: 4.673877537499948,
+      zoom: 8
+    },
+    isFavorite: false,
+    isPremium: false,
+    rating: 4,
+    previewImage: "https://url-to-image/image.png",
+    description: "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.",
+    bedrooms: 3,
+    goods: [
+      "Heating"
+    ],
+    host: {
+      name: "Oliver Conner",
+      avatarUrl: "https://url-to-image/image.png",
+      isPro: false
+    },
+    images: [
+      "https://url-to-image/image.png"
+    ],
+    maxAdults: 4
+  }, 
+
   {
-    id: 2,
-    image: "hhtp",
-    header: "Room 1",
-    description: "Задача организации, в особенности же постоянный количественный рост и сфера нашей активности способствует подготовки и реализации соответствующий условий активизации. С другой стороны постоянный количественный рост и сфера нашей активности требуют определения и уточнения новых предложений.",
-    premium: true,
-    type: "room",
-    rating: 4.8,
-    roomCount: 5,
-    guestMax: 2,
-    price: 400,
-    homeOwner: "Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет оценить значение модели развития.",
-  },
+    id: "6af6f711-c28d-4121-82cd-e0b462a27f00",
+    title: "Beautiful & luxurious studio at great location",
+    type: "apartment",
+    price: 120,
+    city: {
+      name: "Amsterdam",
+      location: {
+        latitude: 52.35514938496378,
+        longitude: 4.673877537499948,
+        zoom: 8
+      }
+    },
+    location: {
+      latitude: 52.35514938496378,
+      longitude: 4.673877537499948,
+      zoom: 8
+    },
+    isFavoritew: false,
+    isPremium: false,
+    rating: 4,
+    previewImage: "https://url-to-image/image.png",
+    description: "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.",
+    bedrooms: 3,
+    goods: [
+      "Heating"
+    ],
+    host: {
+      name: "Oliver Conner",
+      avatarUrl: "https://url-to-image/image.png",
+      isPro: false
+    },
+    images: [
+      "https://url-to-image/image.png"
+    ],
+    maxAdults: 4
+  }, 
 
 ]
