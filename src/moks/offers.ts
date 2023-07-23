@@ -1,6 +1,6 @@
-import {Offer} from '../types/offer';
+import {OfferCard} from '../types/offer';
 
-export const offers: Offer[] = [
+export const offers: OfferCard[] = [
   {
     id: "6af6f711-c28d-4121-82cd-e0b462a27f00",
     title: "Beautiful & luxurious studio at great location",
@@ -20,8 +20,8 @@ export const offers: Offer[] = [
       zoom: 8
     },
     isFavorite: false,
-    isPremium: false,
-    rating: 4,
+    isPremium: true,
+    rating: 3,
     previewImage: "https://url-to-image/image.png",
     description: "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.",
     bedrooms: 3,
@@ -57,7 +57,7 @@ export const offers: Offer[] = [
       longitude: 4.673877537499948,
       zoom: 8
     },
-    isFavoritew: false,
+    isFavorite: false,
     isPremium: false,
     rating: 4,
     previewImage: "https://url-to-image/image.png",
