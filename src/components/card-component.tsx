@@ -21,7 +21,7 @@ function CardComponent({offer}: CardComponentProps): JSX.Element {
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
-            <b className="place-card__price-value">€132</b>
+            <b className="place-card__price-value">€{offer.price}</b>
             <span className="place-card__price-text">/&nbsp;night</span>
           </div>
           <button className="place-card__bookmark-button button" type="button">
@@ -34,13 +34,13 @@ function CardComponent({offer}: CardComponentProps): JSX.Element {
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
             <span style={{ width: '80%' }} />
-            <span className="visually-hidden">Rating</span>
+            <span className="visually-hidden">{offer.rating}</span>
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">Canal View Prinsengracht</a>
+          <a href="#">{offer.header}</a>
         </h2>
-        <p className="place-card__type">Apartment</p>
+        <p className="place-card__type">{offer.type}</p>
       </div>
     </article>
   );
