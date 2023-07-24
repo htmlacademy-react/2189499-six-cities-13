@@ -1,12 +1,23 @@
 import FavoriteCardComponent from "./favorite-card";
 import { Offer } from "../types/offer";
+import { useState } from "react";
 
 type FavoriteListProps = {
   offers: Offer[];
 }
 
 function FavoriteListComponent({offers}: FavoriteListProps): JSX.Element {  
-return (
+  const [activeCard, setActiveCard] = useState('');
+
+  const handleCardMouseEnter = (id: string) => {
+    setActiveCard(id);
+  };
+
+  const handleCardMouseLeave = () => {
+    setActiveCard('');
+  };
+
+  return (
   <li className="favorites__locations-items">
     <div className="favorites__locations locations locations--current">
       <div className="locations__item">
@@ -17,12 +28,17 @@ return (
     </div>
     <div className="favorites__places">
       {
-        offers.map(offer => (<FavoriteCardComponent key={offer.id} offer={offer}/>))
-      }
+        offers.map(offer => (
+          <FavoriteCardComponent 
+            key={offer.id} 
+            offer={offer}
+            handleCardMouseEnter={() => handleCardMouseEnter(offer.id)}
+            handleCardMouseLeave={() => handleCardMouseLeave()}
+          />)
+        )}
     </div>
   </li>
-
   )
 };
-    
+
 export default FavoriteListComponent;

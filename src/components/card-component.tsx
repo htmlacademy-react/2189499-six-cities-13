@@ -1,13 +1,20 @@
-import { Offer ,OfferCard } from "../types/offer";
+import { Offer } from "../types/offer";
+import { Link } from "react-router-dom";
+import { AppRoute } from "../const";
 
-type CardComponentProps = {
-  offer: Offer;
-}
+type CardComponentProps = Offer & {
+  handleCardMouseEnter: () => void;
+  handleCardMouseLeave: () => void;
+};
 
-function CardComponent({offer}: CardComponentProps): JSX.Element {
-  const {title, type, price, rating, id, isPremium} = offer;
+function CardComponent(offer: CardComponentProps): JSX.Element {
+  const {title, type, price, rating, id, isPremium, handleCardMouseEnter, handleCardMouseLeave} = offer;
+  console.log(offer)
   return (
-    <article className="cities__card place-card">
+    <article className="cities__card place-card"
+    onMouseEnter={handleCardMouseEnter}
+    onMouseLeave={handleCardMouseLeave}
+    >
       {isPremium ? 
       <div className="place-card__mark">
         <span>Premium</span>
@@ -15,7 +22,7 @@ function CardComponent({offer}: CardComponentProps): JSX.Element {
       ''
       }
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="#">
+        <Link to={`${AppRoute.Offer}${id}`}>
           <img
             className="place-card__image"
             src="img/apartment-02.jpg"
@@ -23,7 +30,7 @@ function CardComponent({offer}: CardComponentProps): JSX.Element {
             height={200}
             alt="Place image"
           />
-        </a>
+        </Link>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
@@ -51,7 +58,7 @@ function CardComponent({offer}: CardComponentProps): JSX.Element {
         <h2 className="place-card__name">
           <a href="#">{title}</a>
         </h2>
-        <p className="place-card__type">{type}</p>
+        <Link to={`${AppRoute.Offer}${id}`}>{title}</Link>
       </div>
     </article>
   );
