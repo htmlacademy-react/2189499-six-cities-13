@@ -2,7 +2,6 @@ import LogoComponent from '../../components/logo.tsx';
 import LoginComponent from '../../components/login-component.tsx';
 
 function OfferPage(): JSX.Element {
-  
   return (
     <div className="page">
       <header className="header">

@@ -2,20 +2,16 @@ import { Offer, OfferCard } from "../types/offer";
 import { Link } from "react-router-dom";
 import { AppRoute } from "../const";
 
-type CardComponentProps = {
-  offer: Offer & {
-    handleCardMouseEnter: () => void;
-    handleCardMouseLeave: () => void;
-  }
+type CardComponentProps = Offer & {
+  handleCardMouseEnter: () => void;
+  handleCardMouseLeave: () => void;
 };
 
-function CardComponent({offer}: CardComponentProps): JSX.Element {
-  const {title, type, price, rating, id, isPremium, handleCardMouseEnter, handleCardMouseLeave} = offer;
+function CardComponent(prop: CardComponentProps): JSX.Element {
+  const {title, type, price, rating, id, isPremium} = prop;
   console.log({type});
   return (
     <article className="cities__card place-card"
-    onMouseEnter={handleCardMouseEnter}
-    onMouseLeave={handleCardMouseLeave}
     >
       {isPremium ? 
       <div className="place-card__mark">

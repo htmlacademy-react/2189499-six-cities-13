@@ -4,6 +4,7 @@ import { AppRoute } from '../../const.tsx';
 import LogoComponent from '../../components/logo.tsx';
 import LoginComponent from '../../components/login-component.tsx';
 import { Offer } from '../../types/offer.ts';
+import { useState } from 'react';
 
 type HomePageProps = {
   countPlaces: number;
@@ -11,6 +12,16 @@ type HomePageProps = {
 }
 
 function HomePage({ countPlaces, offers }: HomePageProps): JSX.Element {
+  const [activeCard, setActiveCard] = useState('');
+
+  const handleCardMouseEnter = (id: string) => {
+    setActiveCard(id);
+  };
+
+  const handleCardMouseLeave = () => {
+    setActiveCard('');
+  };
+
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -95,7 +106,12 @@ function HomePage({ countPlaces, offers }: HomePageProps): JSX.Element {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                {offers.map(offer => (<CardComponent key={offer.id} offer={offer}/>))}
+                {offers.map(offer => (<CardComponent 
+                key={offer.id} 
+                {...offer}
+                handleCardMouseEnter={() => handleCardMouseEnter(offer.id)}
+                handleCardMouseLeave={() => handleCardMouseLeave()}
+                />))}
               </div>
             </section>
             <div className="cities__right-section">
