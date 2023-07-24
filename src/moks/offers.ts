@@ -2,7 +2,7 @@ import {OfferCard} from '../types/offer';
 
 export const offers: OfferCard[] = [
   {
-    id: "6af6f711-c28d-4121-82cd-e0b462a27f00",
+    id: "1",
     title: "Beautiful & luxurious studio at great location",
     type: "apartment",
     price: 120,
@@ -40,7 +40,7 @@ export const offers: OfferCard[] = [
   }, 
 
   {
-    id: "6af6f711-c28d-4121-82cd-e0b462a27f00",
+    id: "2",
     title: "Beautiful & luxurious studio at great location",
     type: "apartment",
     price: 120,
