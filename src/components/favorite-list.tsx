@@ -16,8 +16,9 @@ return (
       </div>
     </div>
     <div className="favorites__places">
-      <FavoriteCardComponent />
-      
+      {
+        offers.map(offer => (<FavoriteCardComponent key={offer.id} offer={offer}/>))
+      }
     </div>
   </li>
 

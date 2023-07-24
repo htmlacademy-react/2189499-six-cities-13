@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import { AppRoute } from '../../const.tsx';
 import LogoComponent from '../../components/logo.tsx';
 import LoginComponent from '../../components/login-component.tsx';
-import { Offer, OfferCard } from '../../types/offer.ts';
+import { Offer } from '../../types/offer.ts';
 
 type HomePageProps = {
   countPlaces: number;
-  offers: OfferCard[];
+  offers: Offer[];
 }
 
 function HomePage({ countPlaces, offers }: HomePageProps): JSX.Element {

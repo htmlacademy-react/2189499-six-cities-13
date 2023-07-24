@@ -1,11 +1,10 @@
 import LogoComponent from '../../components/logo.tsx';
 import LoginComponent from '../../components/login-component.tsx';
-import { OfferCard } from '../../types/offer.ts';
-import FavoriteCardComponent from '../../components/favorite-card.tsx';
+import { Offer } from '../../types/offer.ts';
 import FavoriteListComponent from '../../components/favorite-list.tsx';
 
 type FavoriteCardProps = {
-  offers: OfferCard[];
+  offers: Offer[];
 }
 
 function FavoritePage({offers}: FavoriteCardProps): JSX.Element {
@@ -26,7 +25,7 @@ function FavoritePage({offers}: FavoriteCardProps): JSX.Element {
           <section className="favorites">
             <h1 className="favorites__title">Saved listing</h1>
             <ul className="favorites__list">
-              <FavoriteListComponent />
+              <FavoriteListComponent offers={offers}/>
             </ul>
           </section>
         </div>
