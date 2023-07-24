@@ -7,11 +7,11 @@ import OfferPage from '../../pages/offer-page/offer-page.tsx';
 import ErrorPage from '../../pages/error-page/error-page.tsx';
 import '../../app.css';
 import PrivateRoute from '../../components/private-route.tsx';
-import { Offer } from '../../types/offer.ts';
+import { Offers } from '../../types/offer.ts';
 
 type AppScreenProps = {
   countPlaces: number;
-  offers: Offer[];
+  offers: Offers;
 }
 
 function App({ countPlaces, offers }: AppScreenProps): JSX.Element {

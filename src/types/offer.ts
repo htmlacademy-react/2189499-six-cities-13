@@ -20,6 +20,12 @@ export type Offer = {
   isPremium: boolean,
   rating: number,
   previewImage?: string,
+  description: string;
+  bedrooms: number;
+  goods: string[];
+  host: Host;
+  images: string[];
+  maxAdults: number;
 };
 
 export type Host = {
@@ -28,13 +34,4 @@ export type Host = {
   isPro: boolean;
 }
 
-export type OfferDescription = {
-  description: string;
-  bedrooms: number;
-  goods: string[];
-  host: Host;
-  images: string[];
-  maxAdults: number;
-}
-
-export type OfferCard = Offer | OfferDescription;
+export type Offers = Offer[];

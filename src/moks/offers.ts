@@ -1,6 +1,6 @@
-import {OfferCard} from '../types/offer';
+import { Offers } from '../types/offer';
 
-export const offers: OfferCard[] = [
+export const offers: Offers = [
   {
     id: "1",
     title: "Beautiful & luxurious studio at great location",

@@ -1,10 +1,10 @@
 import LogoComponent from '../../components/logo.tsx';
 import LoginComponent from '../../components/login-component.tsx';
-import { Offer } from '../../types/offer.ts';
+import { Offers } from '../../types/offer.ts';
 import FavoriteListComponent from '../../components/favorite-list.tsx';
 
 type FavoriteCardProps = {
-  offers: Offer[];
+  offers: Offers;
 }
 
 function FavoritePage({offers}: FavoriteCardProps): JSX.Element {

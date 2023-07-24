@@ -1,18 +1,18 @@
 import LogoComponent from '../../components/logo.tsx';
 import LoginComponent from '../../components/login-component.tsx';
-import { Offer } from '../../types/offer.ts';
+import { Offers } from '../../types/offer.ts';
 import { useParams } from 'react-router-dom';
 
 type OfferPageProp = {
-  offers: Offer[];
+  offers: Offers;
 }
-function OfferPage({offers}: OfferPageProp): JSX.Element {
+function OfferPage({offers}: OfferPageProp): JSX.Element | null {
   const params = useParams();
   const offer = offers.find((el) => el.id === params.id);
 
-  // if (!offer) {
-  //   return null;
-  // }
+  if (!offer) {
+    return null;
+  }
   console.log(offer);
   
   return (
@@ -99,7 +99,7 @@ function OfferPage({offers}: OfferPageProp): JSX.Element {
                 <span className="offer__rating-value rating__value">4.8</span>
               </div>
               <ul className="offer__features">
-                <li className="offer__feature offer__feature--entire">Apartment</li>
+                <li className="offer__feature offer__feature--entire">{offer.type}</li>
                 <li className="offer__feature offer__feature--bedrooms">
                   3 Bedrooms
                 </li>
@@ -108,7 +108,7 @@ function OfferPage({offers}: OfferPageProp): JSX.Element {
                 </li>
               </ul>
               <div className="offer__price">
-                <b className="offer__price-value">€120</b>
+                <b className="offer__price-value">€{offer.price}</b>
                 <span className="offer__price-text">&nbsp;night</span>
               </div>
               <div className="offer__inside">
