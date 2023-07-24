@@ -8,10 +8,11 @@ type CardComponentProps = Offer & {
 };
 
 function CardComponent(prop: CardComponentProps): JSX.Element {
-  const {title, type, price, rating, id, isPremium} = prop;
-  console.log({type});
+  const {title, type, price, rating, id, isPremium, handleCardMouseEnter, handleCardMouseLeave} = prop;
   return (
     <article className="cities__card place-card"
+    onMouseEnter={handleCardMouseEnter}
+    onMouseLeave={handleCardMouseLeave}
     >
       {isPremium ? 
       <div className="place-card__mark">

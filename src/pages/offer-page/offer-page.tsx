@@ -1,7 +1,20 @@
 import LogoComponent from '../../components/logo.tsx';
 import LoginComponent from '../../components/login-component.tsx';
+import { Offer } from '../../types/offer.ts';
+import { useParams } from 'react-router-dom';
 
-function OfferPage(): JSX.Element {
+type OfferPageProp = {
+  offers: Offer[];
+}
+function OfferPage({offers}: OfferPageProp): JSX.Element {
+  const params = useParams();
+  const offer = offers.find((el) => el.id === params.id);
+
+  // if (!offer) {
+  //   return null;
+  // }
+  console.log(offer);
+  
   return (
     <div className="page">
       <header className="header">

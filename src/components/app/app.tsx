@@ -33,11 +33,13 @@ function App({ countPlaces, offers }: AppScreenProps): JSX.Element {
             </PrivateRoute>
           }
         >
-
         </Route>
-        <Route 
-        path={AppRoute.Offer} 
-        element={<OfferPage />}>
+
+        <Route path={AppRoute.Offer}> 
+          <Route 
+            path=':id' 
+            element={<OfferPage offers={offers} />}
+          />
         </Route>
         <Route path='*' element={<ErrorPage />}></Route>
       </Routes>
