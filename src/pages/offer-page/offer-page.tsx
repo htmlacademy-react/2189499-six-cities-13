@@ -14,8 +14,7 @@ function OfferPage({offers}: OfferPageProp): JSX.Element | null {
   if (!offer) {
     return null;
   }
-  console.log(offer);
-  
+
   return (
     <div className="page">
       <header className="header">
@@ -24,7 +23,7 @@ function OfferPage({offers}: OfferPageProp): JSX.Element | null {
             <div className="header__left">
               <LogoComponent />
             </div>
-              <LoginComponent />
+            <LoginComponent />
           </div>
         </div>
       </header>
@@ -78,12 +77,17 @@ function OfferPage({offers}: OfferPageProp): JSX.Element | null {
           </div>
           <div className="offer__container container">
             <div className="offer__wrapper">
-              <div className="offer__mark">
-                <span>Premium</span>
-              </div>
+
+              {
+                offer.isPremium ?
+                  <div className="offer__mark">
+                    <span>Premium</span>
+                  </div> :
+                  ''
+              }
               <div className="offer__name-wrapper">
                 <h1 className="offer__name">
-                  Beautiful &amp; luxurious studio at great location
+                  {offer.title}
                 </h1>
                 <button className="offer__bookmark-button button" type="button">
                   <svg className="offer__bookmark-icon" width={31} height={33}>
@@ -97,15 +101,15 @@ function OfferPage({offers}: OfferPageProp): JSX.Element | null {
                   <span style={{ width: '80%' }} />
                   <span className="visually-hidden">Rating</span>
                 </div>
-                <span className="offer__rating-value rating__value">4.8</span>
+                <span className="offer__rating-value rating__value">{offer.rating}</span>
               </div>
               <ul className="offer__features">
                 <li className="offer__feature offer__feature--entire">{offer.type}</li>
                 <li className="offer__feature offer__feature--bedrooms">
-                  3 Bedrooms
+                  {offer.bedrooms}
                 </li>
                 <li className="offer__feature offer__feature--adults">
-                  Max 4 adults
+                  {offer.maxAdults}
                 </li>
               </ul>
               <div className="offer__price">
