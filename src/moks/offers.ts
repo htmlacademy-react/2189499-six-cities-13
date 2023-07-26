@@ -22,7 +22,7 @@ export const offers: Offers = [
     isFavorite: false,
     isPremium: true,
     rating: 3,
-    previewImage: 'https://url-to-image/image.png',
+    previewImage: 'img/apartment-01.jpg',
     description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
     bedrooms: 3,
     goods: [
@@ -60,7 +60,7 @@ export const offers: Offers = [
     isFavorite: false,
     isPremium: false,
     rating: 4,
-    previewImage: 'https://url-to-image/image.png',
+    previewImage: 'img/apartment-02.jpg',
     description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
     bedrooms: 3,
     goods: [
@@ -98,7 +98,7 @@ export const offers: Offers = [
     isFavorite: false,
     isPremium: false,
     rating: 4,
-    previewImage: 'https://url-to-image/image.png',
+    previewImage:'img/apartment-03.jpg',
     description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
     bedrooms: 3,
     goods: [
@@ -136,7 +136,7 @@ export const offers: Offers = [
     isFavorite: false,
     isPremium: false,
     rating: 4,
-    previewImage: 'https://url-to-image/image.png',
+    previewImage: 'img/apartment-01.jpg',
     description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
     bedrooms: 3,
     goods: [

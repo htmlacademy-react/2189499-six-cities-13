@@ -1,6 +1,6 @@
-import { Offer } from "../types/offer";
-import { Link } from "react-router-dom";
-import { AppRoute } from "../const";
+import { Offer } from '../types/offer';
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../const';
 
 type CardComponentProps = Offer & {
   handleCardMouseEnter: () => void;
@@ -8,23 +8,25 @@ type CardComponentProps = Offer & {
 };
 
 function CardComponent(prop: CardComponentProps): JSX.Element {
-  const {title, type, price, rating, id, isPremium, handleCardMouseEnter, handleCardMouseLeave} = prop;
+  const {title, type, price, rating, id, isPremium, handleCardMouseEnter, handleCardMouseLeave, previewImage} = prop;
+
   return (
     <article className="cities__card place-card"
-    onMouseEnter={handleCardMouseEnter}
-    onMouseLeave={handleCardMouseLeave}
+      onMouseEnter={handleCardMouseEnter}
+      onMouseLeave={handleCardMouseLeave}
     >
-      {isPremium ? 
-      <div className="place-card__mark">
-        <span>Premium</span>
-      </div> :
-      ''
+      {
+        isPremium ?
+          <div className="place-card__mark">
+            <span>Premium</span>
+          </div> :
+          ''
       }
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to={`${AppRoute.Offer}${id}`}>
           <img
             className="place-card__image"
-            src="img/apartment-02.jpg"
+            src={previewImage}
             width={260}
             height={200}
             alt="Place image"
@@ -46,11 +48,11 @@ function CardComponent(prop: CardComponentProps): JSX.Element {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            {(rating == 1) ? <span style={{width: '20%'}}></span>: ''}
-            {(rating == 2) ? <span style={{width: '40%'}}></span>: ''}
-            {(rating == 3) ? <span style={{width: '60%'}}></span>: ''}
-            {(rating == 4) ? <span style={{width: '80%'}}></span>: ''}
-            {(rating == 5) ? <span style={{width: '100%'}}></span>: ''}
+            {(rating === 1) ? <span style={{width: '20%'}}></span> : ''}
+            {(rating === 2) ? <span style={{width: '40%'}}></span> : ''}
+            {(rating === 3) ? <span style={{width: '60%'}}></span> : ''}
+            {(rating === 4) ? <span style={{width: '80%'}}></span> : ''}
+            {(rating === 5) ? <span style={{width: '100%'}}></span> : ''}
             <span className="visually-hidden"></span>
           </div>
         </div>
