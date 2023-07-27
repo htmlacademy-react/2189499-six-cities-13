@@ -108,7 +108,7 @@ function CommentComponent(): JSX.Element {
         </button>
       </div>
     </form>
-  )
+  );
 }
 
 export default CommentComponent;
