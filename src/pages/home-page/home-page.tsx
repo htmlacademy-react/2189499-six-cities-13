@@ -12,6 +12,7 @@ type HomePageProps = {
 }
 
 function HomePage({ countPlaces, offers }: HomePageProps): JSX.Element {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [activeCard, setActiveCard] = useState('');
 
   const handleCardMouseEnter = (id: string) => {

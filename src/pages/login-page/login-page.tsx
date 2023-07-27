@@ -24,7 +24,6 @@ function LoginPage(): JSX.Element {
                   type="email"
                   name="email"
                   placeholder="Email"
-                  required=""
                 />
               </div>
               <div className="login__input-wrapper form__input-wrapper">
@@ -34,7 +33,6 @@ function LoginPage(): JSX.Element {
                   type="password"
                   name="password"
                   placeholder="Password"
-                  required=""
                 />
               </div>
               <button className="login__submit form__submit button" type="submit">
