@@ -9,7 +9,7 @@ type CardComponentProps = Offer & {
 
 function CardComponent(prop: CardComponentProps): JSX.Element {
   const {title, type, price, rating, id, isPremium, handleCardMouseEnter, handleCardMouseLeave, previewImage} = prop;
-
+  const getStarsWidth = (ratingValue: number) => (ratingValue * 20);
   return (
     <article className="cities__card place-card"
       onMouseEnter={handleCardMouseEnter}
@@ -48,11 +48,7 @@ function CardComponent(prop: CardComponentProps): JSX.Element {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            {(rating === 1) ? <span style={{width: '20%'}}></span> : ''}
-            {(rating === 2) ? <span style={{width: '40%'}}></span> : ''}
-            {(rating === 3) ? <span style={{width: '60%'}}></span> : ''}
-            {(rating === 4) ? <span style={{width: '80%'}}></span> : ''}
-            {(rating === 5) ? <span style={{width: '100%'}}></span> : ''}
+            {<span style={{width: `${getStarsWidth(rating)}%`}}></span>}
             <span className="visually-hidden"></span>
           </div>
         </div>

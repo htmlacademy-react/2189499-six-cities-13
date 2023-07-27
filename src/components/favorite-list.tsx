@@ -7,6 +7,7 @@ type FavoriteListProps = {
 }
 
 function FavoriteListComponent({offers}: FavoriteListProps): JSX.Element {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [activeCard, setActiveCard] = useState('');
 
   const handleCardMouseEnter = (id: string) => {
