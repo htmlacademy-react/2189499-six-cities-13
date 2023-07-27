@@ -2,11 +2,27 @@ import CardComponent from '../../components/card-component.tsx';
 import { Link } from 'react-router-dom';
 import { AppRoute } from '../../const.tsx';
 import LogoComponent from '../../components/logo.tsx';
+import LoginComponent from '../../components/login-component.tsx';
+import { Offers } from '../../types/offer.ts';
+import { useState } from 'react';
+
 type HomePageProps = {
   countPlaces: number;
+  offers: Offers;
 }
 
-function HomePage({ countPlaces }: HomePageProps): JSX.Element {
+function HomePage({ countPlaces, offers }: HomePageProps): JSX.Element {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [activeCard, setActiveCard] = useState('');
+
+  const handleCardMouseEnter = (id: string) => {
+    setActiveCard(id);
+  };
+
+  const handleCardMouseLeave = () => {
+    setActiveCard('');
+  };
+
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -15,27 +31,7 @@ function HomePage({ countPlaces }: HomePageProps): JSX.Element {
             <div className="header__left">
               <LogoComponent />
             </div>
-            <nav className="header__nav">
-              <ul className="header__nav-list">
-                <li className="header__nav-item user">
-                  <a
-                    className="header__nav-link header__nav-link--profile"
-                    href="#"
-                  >
-                    <div className="header__avatar-wrapper user__avatar-wrapper"></div>
-                    <span className="header__user-name user__name">
-                      Oliver.conner@gmail.com
-                    </span>
-                    <span className="header__favorite-count">3</span>
-                  </a>
-                </li>
-                <li className="header__nav-item">
-                  <a className="header__nav-link" href="#">
-                    <span className="header__signout">Sign out</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
+            <LoginComponent />
           </div>
         </div>
       </header>
@@ -111,11 +107,14 @@ function HomePage({ countPlaces }: HomePageProps): JSX.Element {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <CardComponent />
-                <CardComponent />
-                <CardComponent />
-                <CardComponent />
-                <CardComponent />
+                {offers.map((offer) => (
+                  <CardComponent
+                    key={offer.id}
+                    {...offer}
+                    handleCardMouseEnter={() => handleCardMouseEnter(offer.id)}
+                    handleCardMouseLeave={() => handleCardMouseLeave()}
+                  />
+                ))}
               </div>
             </section>
             <div className="cities__right-section">

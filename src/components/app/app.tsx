@@ -7,16 +7,19 @@ import OfferPage from '../../pages/offer-page/offer-page.tsx';
 import ErrorPage from '../../pages/error-page/error-page.tsx';
 import '../../app.css';
 import PrivateRoute from '../../components/private-route.tsx';
+import { Offers } from '../../types/offer.ts';
 
 type AppScreenProps = {
   countPlaces: number;
+  offers: Offers;
 }
 
-function App({ countPlaces }: AppScreenProps): JSX.Element {
+function App({ countPlaces, offers }: AppScreenProps): JSX.Element {
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={AppRoute.Main} element={<HomePage countPlaces={countPlaces} />} />
+        <Route path={AppRoute.Main} element={<HomePage countPlaces={countPlaces} offers={offers}/>} />
         <Route path={AppRoute.Login} element={<LoginPage />}>
         </Route>
 
@@ -24,15 +27,19 @@ function App({ countPlaces }: AppScreenProps): JSX.Element {
           path={AppRoute.Favorites}
           element={
             <PrivateRoute
-              authorizationStatus={AuthorizationStatus.NoAuth}
+              authorizationStatus={AuthorizationStatus.Auth}
             >
-              <FavoritePage />
+              <FavoritePage offers={offers}/>
             </PrivateRoute>
           }
         >
-
         </Route>
-        <Route path={AppRoute.Offer} element={<OfferPage />}>
+
+        <Route path={AppRoute.Offer}>
+          <Route
+            path=':id'
+            element={<OfferPage offers={offers} />}
+          />
         </Route>
         <Route path='*' element={<ErrorPage />}></Route>
       </Routes>
