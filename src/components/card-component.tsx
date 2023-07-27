@@ -2,7 +2,7 @@ import { Offer } from '../types/offer';
 import { Link } from 'react-router-dom';
 import { AppRoute } from '../const';
 
-type CardComponentProps = Offer & {
+export type CardComponentProps = Offer & {
   handleCardMouseEnter: () => void;
   handleCardMouseLeave: () => void;
 };

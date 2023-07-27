@@ -1,14 +1,10 @@
-import { Offer } from '../types/offer';
 import { Link } from 'react-router-dom';
 import { AppRoute } from '../const';
+import { CardComponentProps } from './card-component';
 
-type FavoriteCardProps = Offer & {
-  handleCardMouseEnter: () => void;
-  handleCardMouseLeave: () => void;
-};
-
-function FavoriteCardComponent(prop: FavoriteCardProps): JSX.Element {
+function FavoriteCardComponent(prop: CardComponentProps): JSX.Element {
   const { id, isPremium, price, rating, type, title, previewImage, handleCardMouseEnter, handleCardMouseLeave,} = prop;
+  const getStarsWidth = (ratingValue: number) => (ratingValue * 20);
   return (
     <article className="favorites__card place-card"
       onMouseEnter={handleCardMouseEnter}
@@ -50,11 +46,7 @@ function FavoriteCardComponent(prop: FavoriteCardProps): JSX.Element {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            {(rating === 1) ? <span style={{width: '20%'}}></span> : ''}
-            {(rating === 2) ? <span style={{width: '40%'}}></span> : ''}
-            {(rating === 3) ? <span style={{width: '60%'}}></span> : ''}
-            {(rating === 4) ? <span style={{width: '80%'}}></span> : ''}
-            {(rating === 5) ? <span style={{width: '100%'}}></span> : ''}
+            {<span style={{width: `${getStarsWidth(rating)}%`}}></span>}
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
